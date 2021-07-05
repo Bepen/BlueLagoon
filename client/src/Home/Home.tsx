@@ -1,15 +1,32 @@
 import React from 'react';
 import './Home.css';
-import selfie from '../images/placeholder.jpg'
 
-export default class Home extends React.Component {
+export default class Home extends React.Component<{}, {selfie: any}> {
 
-  firstName: string = "Bepen";
-  lastName: string = "Neupane";
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      selfie: undefined
+    };
+  }
 
+  componentDidMount() {
+    this.updateSelfie();
+  }
+
+  updateSelfie(): void {
+    fetch('http://localhost:3001/fetchSelfie')
+    .then((res: any) => {
+      return res.blob();
+    })
+    .then((blob: any) => {
+      let objectURL = URL.createObjectURL(blob);
+      this.setState({selfie: objectURL});
+    });
+  }
 
   getFullNameGreeting(): JSX.Element {
-    const fullName = `${this.firstName} ${this.lastName}`
+    const fullName = "Bepen Neupane";
     return (
       <div className="Home">
         Hello, world! My name is {fullName}.
@@ -18,7 +35,7 @@ export default class Home extends React.Component {
   }
 
   getImageElement(): JSX.Element {
-    return <img src={selfie} alt="Selfie" />;
+    return <img src={this.state.selfie} alt="Selfie" />;
   }
 
   render() {
