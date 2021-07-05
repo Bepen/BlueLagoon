@@ -21,7 +21,7 @@ Navigate to http://localhost:3000
 | Task | Status | Last Updated Status |
 |---|---|---|
 | Add Typescript | Complete | 7/1/21 |
-| Install ESLint | Not Started | |
+| Add ESLint | Not Started | 7/5/21 |
 | Add GraphQL | Not Started | |
 | Add SQL Database | Not Started | |
 
