@@ -38,13 +38,26 @@ export default class Home extends React.Component<{}, {selfie: any}> {
     return <img src={this.state.selfie} alt="Selfie" />;
   }
 
+  getBlueLagoonBio(): JSX.Element {
+    return (
+      <div>
+        <h1>Blue Lagoon</h1>
+        <p>Blue Lagoon is a website I created to combine my curiosity with my software engineering skills. On the front end, you will find a blog with a bunch of questions that I googled at one point or another.
+          On the back end (see <a href="https://github.com/Bepen/BlueLagoon">GitHub</a>), you will find my source code which you'll see is ridiculously over the top for a simple blog site. Enjoy!
+        </p>
+      </div>
+    );
+  }
+
   render() {
     const label: JSX.Element = this.getFullNameGreeting();
     const photo: JSX.Element = this.getImageElement();
+    const bio: JSX.Element = this.getBlueLagoonBio();
     return (
       <React.Fragment>
         {photo}
         {label}
+        {bio}
       </React.Fragment>
     );
   }
