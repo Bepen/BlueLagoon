@@ -42,7 +42,7 @@ export default class Home extends React.Component<{}, {selfie: any}> {
     return (
       <div>
         <h1>Blue Lagoon</h1>
-        <p>Blue Lagoon is a website I created to combine my curiosity with my software engineering skills. On the front end, you will find a blog with a bunch of questions that I googled at one point or another.
+        <p>Blue Lagoon is a website I created to combine my curiosity with my software engineering skills. On the front end, you will find stories that I have written with a computer science focus.
           On the back end (see <a href="https://github.com/Bepen/BlueLagoon">GitHub</a>), you will find my source code which you'll see is ridiculously over the top for a simple blog site. Enjoy!
         </p>
       </div>
